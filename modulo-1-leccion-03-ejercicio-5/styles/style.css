@@ -1,0 +1,18 @@
+:root {
+  --dimensions: 100px;
+}
+
+body {
+  font-family: "Tangerine", serif;
+  font-size: 48px;
+}
+
+.imagen {
+  width: var(--dimensions);
+  height: var(--dimensions);
+  padding: 10px;
+  border: 5px;
+  box-sizing: border-box;
+  margin: auto;
+  background: red;
+}
