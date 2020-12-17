@@ -1,0 +1,36 @@
+* {
+  margin: 0px;
+  border: 0px solid blue;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+}
+
+.header {
+  background-color: coral;
+}
+.footer {
+  background-color: greenyellow;
+}
+
+.aside {
+  width: 25%;
+}
+
+.article {
+  width: 50%;
+  background-color: lightblue;
+}
+
+.parrafo {
+  text-align: left;
+  padding: 10px;
+}
+.aside1 {
+  background-color: yellow;
+}
+.aside2 {
+  background-color: pink;
+}

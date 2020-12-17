@@ -1,0 +1,29 @@
+div,
+img {
+  margin: 0;
+  border: 1px solid blue;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  background-color: rgb(211, 183, 211);
+}
+
+.ejer2 {
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagen {
+  width: 200px;
+  height: 100px;
+  background-color: rgb(211, 183, 211);
+}
