@@ -1,0 +1,94 @@
+@import url("reset.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --text-menu: #4a4a4a;
+  --background-color-main: #3cdbc0;
+  --background-color-header: #ffffff;
+  --text-main: #ffffff;
+}
+
+.page {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Header styles */
+
+.header {
+  background-color: var(--background-color-header);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.link-list {
+  margin-bottom: 13px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.link-logo {
+  height: 71px;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+.link {
+  margin: 0 10px;
+}
+
+.blog,
+.contact {
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  color: var(--text-menu);
+  font-size: 16px;
+}
+
+/* Main styles */
+.main {
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+  color: var(--text-main);
+  font-size: 30px;
+  background-color: var(--background-color-main);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+}
+.slogan {
+  display: block;
+}
+
+/* Desktop and tablet mediaquery */
+
+@media all and (min-width: 746px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 20px 20px 30px;
+  }
+  .main {
+    font-size: 40px;
+  }
+}
