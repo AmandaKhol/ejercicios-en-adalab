@@ -80,6 +80,7 @@
 }
 .slogan {
   display: block;
+  text-transform: capitalize;
 }
 
 /* Desktop and tablet mediaquery */
