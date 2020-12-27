@@ -35,8 +35,9 @@
 .link-list {
   margin-bottom: 13px;
   margin-top: 10px;
+  /*   display: inline-flex; cuidado al usar esto*/
   display: flex;
-  justify-content: center;
+  /*   justify-content: center; */
   list-style: none;
 }
 
