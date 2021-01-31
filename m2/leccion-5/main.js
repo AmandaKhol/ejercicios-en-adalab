@@ -50,16 +50,18 @@ window.addEventListener("scroll", handleChangeColor);
 const pageSelector = document.querySelector(".page");
 
 function handleColorKeyboard(event) {
-  console.log(event.target);
-  if (event.key === "r") {
-    pageSelector.classList.toggle("pageR");
-  } else if (event.key === "m") {
-    pageSelector.classList.toggle("pageM");
-  } else {
+  console.log(event);
+  if (event.target.id === "page") {
+    if (event.key === "r") {
+      pageSelector.classList.toggle("pageR");
+    } else if (event.key === "m") {
+      pageSelector.classList.toggle("pageM");
+    } else {
+    }
   }
 }
 
-pageSelector.addEventListener("keydown", handleColorKeyboard);
+pageSelector.addEventListener("keyup", handleColorKeyboard);
 
 /* const handleElement = document.querySelector ('.document'); 
 console.log(handleElement)

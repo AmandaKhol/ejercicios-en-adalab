@@ -95,7 +95,17 @@ function averageAge(adalabersArray) {
   return result;
 }
 
+function averageAgeIn(adalabersArray) {
+  let sumAge = 0;
+  for (const adalaber in adalabersArray) {
+    sumAge += adalabersArray[adalaber].age;
+  }
+  const result = sumAge / adalabersArray.length;
+  return result;
+}
+
 console.log(`Media edad adalabers: ${averageAge(adalabers)}`);
+console.log(`Media edad adalabers(IN): ${averageAgeIn(adalabers)}`);
 
 function theYoungest(adalabersArray) {
   let agesArray = [];
@@ -122,7 +132,21 @@ function countDesigners(adalabersArray) {
   return countDesigners;
 }
 
+function countDesignersIn(adalabersArray) {
+  let countDesigners = 0;
+  for (const adalaber in adalabersArray) {
+    if (adalabersArray[adalaber].job === "diseñadora") {
+      countDesigners += 1;
+    } else {
+    }
+  }
+  return countDesigners;
+}
+
 console.log(`En esta promoción hay ${countDesigners(adalabers)} diseñadoras`);
+console.log(
+  `En esta promoción hay (IN) ${countDesignersIn(adalabers)} diseñadoras`
+);
 
 // EJERCICIO 8
 const alarmButton = document.querySelectorAll(".js-alarm");
