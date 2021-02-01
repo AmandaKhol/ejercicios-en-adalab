@@ -1,7 +1,3 @@
-.eje8 {
-  height: 200px;
-}
-
-.activated {
-  background-color: red;
+.crossoff {
+  text-decoration: line-through;
 }

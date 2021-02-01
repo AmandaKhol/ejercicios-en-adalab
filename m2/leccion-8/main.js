@@ -44,6 +44,10 @@ function bestLostNomber() {
 console.log("Ejercicio 3: " + bestLostNomber());
 
 // EJERCICIO 4
+
+const countElement = document.querySelector(".js-count");
+const listElement = document.querySelector(".js-list");
+
 const tasks = [
   { name: "Recoger setas en el campo", completed: true },
   { name: "Comprar pilas", completed: true },
@@ -53,6 +57,71 @@ const tasks = [
     completed: false,
   },
 ];
+// Mostrar una frase que indique cuántas tareas hay
+countElement.innerHTML = `Tenemos ${tasks.length} tareas`;
+
+// Mostras solo las tarea
+let html = "";
+for (const oneTask of tasks) {
+  html += `<li>${oneTask.name}</li>`;
+}
+
+listElement.innerHTML = html;
+
+// Tachar las completadas
+let html2 = "";
+for (const oneTask of tasks) {
+  if (oneTask.completed) {
+    html2 += `<li class="crossoff">`;
+  } else {
+    html2 += `<li>`;
+  }
+
+  html2 += oneTask.name;
+  html2 += `</li>`;
+
+  /*   html += `<li ${oneTask.completed ? 'class="crossoff"' : ""}>${
+    oneTask.name
+  }</li>`; */
+}
+
+listElement.innerHTML += html2;
+
+// marcar el checkbox
+
+let html3 = "";
+for (const oneTask of tasks) {
+  if (oneTask.completed) {
+    html3 += `<li class="crossoff">`;
+  } else {
+    html3 += `<li>`;
+  }
+  html3 += `<input type="checkbox" ${
+    oneTask.completed ? `checked="checked"` : ""
+  }/>`;
+  html3 += oneTask.name;
+  html3 += `</li>`;
+}
+
+listElement.innerHTML += html3;
+
+const renderList = () => {
+  let html = "";
+  for (const oneTask of tasks) {
+    if (oneTask.completed) {
+      html += `<li class="crossoff">`;
+    } else {
+      html += `<li>`;
+    }
+    html += `<input type="checkbox" ${
+      oneTask.completed ? `checked="checked"` : ""
+    }/>`;
+    html += oneTask.name;
+    html += `</li>`;
+  }
+
+  listElement.innerHTML += html;
+};
 
 // EJERCICIO 5 BONUS
 
