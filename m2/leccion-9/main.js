@@ -1,4 +1,5 @@
 "use strict";
+
 //EJERCICIO 1
 function getEmoji() {
   fetch("https://api.rand.fun/number/integer")
@@ -9,9 +10,17 @@ function getEmoji() {
 }
 document.querySelector(".js-emoji").addEventListener("click", getEmoji);
 
+/* fetch("https://dog.ceo/api/breeds/image/list/all)
+  .then((response) => response.json())
+  .then((data) => {
+    for (const breed in data.message) {
+      console.log(breed);
+    }
+  }); */
+
 // EJERCICIO 2
 function getDogImage() {
-  fetch("https://dog.ceo/api/breed/chihuahua/images/random")
+  fetch("https://dog.ceo/api/breed/terrier/westhighland/images/random")
     .then((response) => response.json())
     .then((data) => {
       const img = document.querySelector("img");
@@ -43,3 +52,16 @@ function handleSearch() {
 }
 
 search.addEventListener("click", handleSearch);
+
+//EJERCICIO 4
+function organAdalab() {
+  fetch(`https://api.github.com/orgs/Adalab/repos`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      console.log(data.length);
+      debugger;
+    });
+}
+
+organAdalab();
