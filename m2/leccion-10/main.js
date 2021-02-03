@@ -1,68 +1,67 @@
 "use strict";
 
 //EJERCICIO 1
-
-const character = document.querySelector(".character");
-const search = document.querySelector(".search");
-const form = document.querySelector(".form")
-const list = document.querySelector(".js__results")
-
-function handleSubmit(ev) {
-  ev.preventDefault();
+function getEmoji() {
+  fetch("https://api.rand.fun/number/integer")
+    .then((response) => response.json())
+    .then((data) => {
+      document.querySelector(".js-result").innerHTML = data.result;
+    });
 }
+document.querySelector(".js-emoji").addEventListener("click", getEmoji);
 
-function handleSearch() {
-  const characterName = character.value;
-  searchCharacter(characterName);
-}
-
-function completeList(arrayCharacters) {
-  list.innerHTML = "";
-  for (let character of arrayCharacters) {
-    list.innerHTML += `<li>`;
-    list.innerHTML += `Name: ${character.name}, `;
-    list.innerHTML += ` Gender: ${character.gender}`;
-    list.innerHTML += `</li>`;
-  }
-  }
-
-
-function searchCharacter(name) {
-  fetch(`https://swapi.dev/api/people/?search=${name}`)
+/* fetch("https://dog.ceo/api/breeds/image/list/all)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
-    completeList(data.results)
+    for (const breed in data.message) {
+      console.log(breed);
+    }
+  }); */
 
-  });
+// EJERCICIO 2
+function getDogImage() {
+  fetch("https://dog.ceo/api/breed/terrier/westhighland/images/random")
+    .then((response) => response.json())
+    .then((data) => {
+      const img = document.querySelector("img");
+      img.src = data.message;
+      img.alt = "Un perro";
+    });
+}
+const btn = document.querySelector(".js-dog");
+btn.addEventListener("click", getDogImage);
+
+// EJERCICIO 3
+
+const user = document.querySelector(".user");
+const login = document.querySelector(".login");
+const photo = document.querySelector(".photo");
+const repositories = document.querySelector(".repositories");
+const search = document.querySelector(".search");
+
+function handleSearch() {
+  const username = user.value;
+  fetch(`https://api.github.com/users/${username}`)
+    .then((response) => response.json())
+    .then((data) => {
+      login.innerHTML = data.login;
+      photo.src = data.avatar_url;
+      photo.alt = username;
+      repositories.innerHTML = data.public_repos;
+    });
 }
 
-form.addEventListener("submit", handleSubmit);
 search.addEventListener("click", handleSearch);
 
-// EJERCICIO 4
-
-const nameUser = document.querySelector(".name");
-const paragraph = document.querySelector(".paragraph");
-const complete = document.querySelector(".complete");
-const savedData = localStorage.getItem('userName');
-
-function handleComplete() {
-    const content = nameUser.value;
-    paragraph.innerHTML = content;
-    localStorage.setItem('nameUser', content);
-  
+//EJERCICIO 4
+function organAdalab() {
+  fetch(`https://api.github.com/orgs/Adalab/repos`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      console.log(data.length);
+      debugger;
+    });
 }
 
-function lookStorageData() {
-  const savedData = localStorage.getItem('nameUser');
-  if (savedData) {
-    paragraph.innerHTML = savedData;
-    nameUser.value = savedData;
-  }
-}
-
-lookStorageData();
-
-console.log(localStorage.getItem('nameUser'));
-nameUser.addEventListener("keyup", handleComplete);
+organAdalab();
