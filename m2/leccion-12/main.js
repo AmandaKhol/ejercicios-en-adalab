@@ -60,7 +60,10 @@ const inputTel = document.querySelector('#tel-input');
 
 function handleSelect() {
   const nameSelectedValue = selectName.value;
-  const indexResult = usersArray.findIndex(user => user.name === nameSelectedValue)
+  let indexResult = usersArray.findIndex(user => user.name === nameSelectedValue);
+  if (indexResult === -1){
+    indexResult = usersArray.length;
+  }
   completeInputs(indexResult);
   }
 
@@ -80,6 +83,7 @@ function completeInputs(indexArray) {
     inputName.value = "";
     inputSurname.value = "";
     inputTel.value = "";
+    return;
   }
   inputName.value= usersArray[indexArray].name;
   inputSurname.value = usersArray[indexArray].surname;
