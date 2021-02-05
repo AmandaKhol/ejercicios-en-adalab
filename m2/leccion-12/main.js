@@ -30,7 +30,9 @@ function handleSearchBtn() {
   }
 
 }
-searchBtn.addEventListener("click", handleSearchBtn);
+
+selectElement.addEventListener("change", handleSearchBtn);
+/* searchBtn.addEventListener("click", handleSearchBtn); */
 
 //EJERCICIO 3
 
@@ -59,11 +61,13 @@ const inputSurname = document.querySelector('#surname-input');
 const inputTel = document.querySelector('#tel-input');
 
 function handleSelect() {
-  const nameSelectedValue = selectName.value;
-  let indexResult = usersArray.findIndex(user => user.name === nameSelectedValue);
-  if (indexResult === -1){
+  const indexResult = selectName.value;
+
+  /* const nameSelectedValue = selectName.value; */
+/*   let indexResult = usersArray.findIndex(user => user.name === nameSelectedValue); */
+/*   if (indexResult === -1){
     indexResult = usersArray.length;
-  }
+  } */
   completeInputs(indexResult);
   }
 
@@ -79,16 +83,30 @@ function handleSelect() {
   } */
 
 function completeInputs(indexArray) {
-  if (indexArray === usersArray.length) {
+  if (indexArray === "none" ) {
     inputName.value = "";
     inputSurname.value = "";
     inputTel.value = "";
     return;
   }
+  indexArray = parseInt(indexArray);
   inputName.value= usersArray[indexArray].name;
   inputSurname.value = usersArray[indexArray].surname;
   inputTel.value = usersArray[indexArray].tel;
+ /*  sendFormValues(usersArray[indexArray]); */
 
 }
 
+
+/* function sendFormValues(usersArray) {
+  console.log(JSON.stringify(usersArray));
+
+  fetch(url, {
+    method: 'post',
+    body: JSON.stringify(usersArray),
+})
+.then(response => console.log(response) );
+
+  
+} */
 selectName.addEventListener("change", handleSelect);
