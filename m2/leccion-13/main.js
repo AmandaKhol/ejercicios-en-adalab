@@ -68,11 +68,30 @@ const runners = [
   { name: 'Cho Chang', time: 35 }
 ];
 
+
+const ganadorTotal = runners.reduce((ganador, fila) => {
+
+  if (ganador === "Vacio") {
+    return fila;
+  }
+  else if (ganador.time > fila.time) {
+    return fila;
+  }
+  else {
+    return ganador;
+  }
+
+}   , "Vacio"  );
+
+console.log("Ejercicio 8", ganadorTotal);
+
 /* const winner = runners.reduce((runner, value) => runner.time > value ? value = runner.time, 0);
 
 console.log(winner); */
 
 //EJERCICIO 9
+
+
 
 
 //EJERCICIO 10
@@ -121,7 +140,7 @@ const usersEje12 = [
   { name: 'Inmaculada', isPremium: false, pin: 8998 }
 ];
 //NO ME FUNCIONA
-const alphabetical = usersEje12.sort((a, b) => a.name - b.name);
+const alphabetical = usersEje12.sort((a, b) => a.name < b.name ? 1 : a.name > b.name ? -1 : 0);
 
 console.log(alphabetical);
 
