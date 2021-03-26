@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  background-color: gainsboro;
+  width: 400px;
+  padding: 10px;
+}
+
+.paragraph {
+  width: 300px;
+  text-align: left;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.birthday {
+  display: flex;
+  flex-direction: column;
+}

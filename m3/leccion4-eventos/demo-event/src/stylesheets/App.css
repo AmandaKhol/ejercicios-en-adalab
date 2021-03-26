@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  background-color: gainsboro;
+  width: 400px;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+}
+.name-date {
+  text-align: left;
+}
+
+.paragraph {
+  width: 300px;
+  text-align: left;
+}
+
+.mediacard-logo {
+  width: 80px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}

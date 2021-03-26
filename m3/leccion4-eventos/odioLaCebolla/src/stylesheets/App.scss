@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.noHateOnion {
+  width: 80%;
+  height: 80vh;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+}
+
+.hateOnion {
+  width: 80%;
+  height: 80vh;
+  text-align: center;
+  vertical-align: middle;
+  background-color: tomato;
+}
